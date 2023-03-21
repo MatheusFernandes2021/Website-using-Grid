@@ -1,0 +1,238 @@
+/* Básico */
+
+*{
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;   
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/* Menu */
+
+nav.Topo{
+    max-width: 100%;
+}
+
+nav.Topo ul{
+    display: flex;
+    background: #060512;
+    list-style: none;
+    justify-content: flex-end;
+}
+
+nav.Topo ul li{
+    margin: 24px;
+}
+
+nav.Topo ul li a{
+    color: #FFF;
+    text-decoration: none;
+    padding: 20px 5px;
+}
+
+nav.Topo ion-icon{
+    font-size: 15px;
+}
+
+nav.Topo ul li a::before{
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: #FFF;
+    margin: 30px 0 0 -5px;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+/* Ajustando a largura do sublinhado para cada item. */
+
+nav.Topo ul li #Link1::before{
+    width: 76px;
+}
+
+nav.Topo ul li #Link2::before{
+    width: 80px;
+}
+
+nav.Topo ul li #Link3::before{
+    width: 100px;
+}
+
+nav.Topo ul li #Link4::before{
+    width: 75px;
+}
+
+nav.Topo ul li #Link5::before{
+    width: 93px;
+}
+
+
+nav.Topo ul li a:hover::before{
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+body{
+    background: #333;
+}
+
+/* Barra de rolagem */
+
+body::-webkit-scrollbar {
+    width: 15px;  
+}
+
+body::-webkit-scrollbar-track {
+    background: #333;        
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #060512;    
+    border-radius: 20px;       
+    border: 3px solid #333;  
+}
+
+h1{
+    font-size: 30px;
+    color: #FFF;
+    text-align: center;
+    margin: 1em 4em 2em;
+    border-bottom: 10px solid #FFF;
+    border-radius: 20px;
+}
+
+#FotoPerfil{
+    height: 40px;
+    width: 40px;
+    margin: 18px 48% 0px 20px;
+}
+
+#FotoPerfil:hover{
+    cursor: pointer;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #FFF;
+    border-radius: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-areas:
+    "sidenav item item"
+    "sidenav item item"
+    "footer footer footer"
+    ;
+}
+
+img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.sidenav{
+    height: 700px;
+    max-width: 300px;
+    min-width: 250px;
+    border-radius: 20px;
+    background: #1C1C1C;
+    grid-area: "sidenav";
+    grid-row: sidenav;
+    margin: 2em 2em 2em 0em;
+    transition: all 0.5s;
+}
+
+.sidenav:hover{
+    -webkit-transform: scale(1.5), drop-shadow(10px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(10px 10px 5px rgba(0,0,0,.5));
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.item{
+    height: 300px;
+    max-width: 300px;
+    min-width: 250px;
+    border-radius: 20px;
+    background: transparent;
+    color: #FFF;
+    grid-area: "item";
+    margin: 2em 2em 0em 2em;
+    transition: all 0.5s;
+}
+
+.item:hover{
+    -webkit-transform: scale(1.5), drop-shadow(10px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(10px 10px 5px rgba(0,0,0,.5));
+    transform: scale(1.10);
+    cursor: pointer;
+}
+
+.footer{
+    width: 100%;
+    height: 100px;
+    color: #FFF;
+    background: #1C1C1C;
+    border-radius: 20px;
+    grid-area: "footer";
+    grid-column: footer;
+    text-align: center;
+    transition: all 0.5s;
+    margin-bottom: 2em;
+}
+
+.footer p{
+    margin: 17px;
+}
+
+.footer:hover{
+    -webkit-transform: scale(1.5), drop-shadow(10px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(10px 10px 5px rgba(0,0,0,.5));
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media (max-width: 930px){
+    .container{
+        grid-template-areas:
+        "sidenav item"
+        "sidenav item"
+        "sidenav item"
+        "sidenav item"
+        "footer footer"
+        ;
+    }
+    
+}
+
+@media (max-width: 620px){
+    .sidenav{
+        height: 200px;
+        margin: 2em 2em 2em 4.5em;
+    }
+
+    .item{
+        margin: 2.5em 2em 2em 4.5em;
+    }
+
+    .container{
+        justify-content: center;
+        grid-template-areas:
+        "sidenav"
+        "item"
+        "item"
+        "item"
+        "footer"
+        ;
+    }
+    
+}
+
+
